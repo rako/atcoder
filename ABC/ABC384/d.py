@@ -9,9 +9,10 @@ nk = s % sum_a
 #尺取り
 r, ans, tmp = 0, 0, 1
 for l in range(n*2):
-    while r < n*2 and accma2[l:r+1] < nk:
+    while r < n*2 and accma2[r+1] - accma2[l] < nk:
         r += 1
-    if accma2[l:r+1] == nk:
+    print(l,r)
+    if accma2[r+1] - accma2[l] == nk:
         ans = 1
         break
 print("Yes" if ans == 1 else "No")

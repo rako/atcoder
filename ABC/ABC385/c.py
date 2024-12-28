@@ -5,6 +5,8 @@
 
 n = int(input())
 h = list(map(int,input().split()))
+
+"""
 hindex = {}
 for i,j in enumerate(h):
     if j not in hindex:
@@ -41,3 +43,33 @@ if flag == len(hindex):
     print(1)
 else:
     print(count + 2)
+
+"""
+
+"""
+for i in range(n):
+    for j in range(i+1,n):
+        tmp = h[i:j+1]
+        for k in range(len(tmp)-1):
+            if tmp[k+1] - tmp[k] != tmp[1] - tmp[0]:
+                break
+"""
+
+ans = 1
+for i in range(n-2):
+    for j in range(i+2, n):
+        diff = j - i #等差の差分
+        if h[i] != h[j]:
+            continue
+        l,r = i,j
+        count = 2
+        while True:
+            if r + diff >= n: #ストップする
+                break
+            l,r = r, r + diff
+            if h[l] == h[r]:
+                ans = max(ans,  count + 1)
+            else:
+                break
+        #print(i,j,ans)
+print(ans)

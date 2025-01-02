@@ -1,0 +1,5 @@
+s = input()
+sl = list(s.replace("", " "))
+sl.pop(0)
+sl.pop(-1)
+print(*sl, sep="")

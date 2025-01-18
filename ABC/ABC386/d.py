@@ -8,7 +8,7 @@ for i in query:
             continue
         elif c == "W":
             exist = False
-    elif x+y > n+2:
+    elif x+y >= n+2:
         if c == "W":
             continue
         elif c == "B":

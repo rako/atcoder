@@ -58,9 +58,9 @@ for i in range(n):
 ans = 1
 for i in range(n-2):
     for j in range(i+2, n):
-        diff = j - i #等差の差分
-        if h[i] != h[j]:
+        if h[i] != h[j]: #h[i]とh[j]の高さが異なる場合はスキップ
             continue
+        diff = j - i #等差の差分
         l,r = i,j
         count = 2
         while True:
@@ -71,5 +71,7 @@ for i in range(n-2):
                 ans = max(ans,  count + 1)
             else:
                 break
-        #print(i,j,ans)
+        print(i,j,ans)
+
+
 print(ans)

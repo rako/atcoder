@@ -6,6 +6,7 @@ for i in range(n):
 #yが同じで、xが違うものを探す
 #より小さい方のxがRで、より大きい方のxがLならば、衝突する
 xylist.sort(key=lambda x: x[1])
+#print(xylist)
 i = 0
 existlist = []
 while(i < n):
@@ -16,10 +17,11 @@ while(i < n):
             break
         eqlist.append(xylist[j])
         j += 1
+    print(eqlist)
     tmplist = []
     for k in range(len(eqlist)):
         #print(eqlist[k])
-        #print(tmplist)
+        print(tmplist)
         if len(tmplist) == 0:
             tmplist.append(eqlist[k][2])
         elif eqlist[k][2] == "R":
@@ -27,6 +29,8 @@ while(i < n):
         elif eqlist[k][2] == "L":
             if tmplist[-1] == "R":
                 tmplist.pop(-1)
+                print("Yes")
+                exit()
             else:
                 tmplist.append(eqlist[k][2])
     existlist.append(True if len(tmplist) != len(eqlist) else False)
